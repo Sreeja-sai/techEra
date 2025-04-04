@@ -1,41 +1,45 @@
-import styled from 'styled-components'
+/* import styled from 'styled-components' */
 
-export const LoaderContainer = styled.div`
+.loaderContainer {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-`
-export const FailureContainer = styled(LoaderContainer)`
+}
+
+.failureContainer {
   height: 80vh;
   flex-direction: column;
-`
+}
 
-export const FailureImage = styled.img`
+.failureImage {
   height: 300px;
-`
+}
 
-export const FailedHeading = styled.h1`
+failedHeading {
   text-align: center;
-`
-export const FailedText = styled.p`
-  text-align: center;
-`
+}
 
-export const RetryBtn = styled.button`
+failedText {
+  text-align: center;
+}
+
+.retryBtn {
   background-color: #4656a1;
   border: none;
   padding: 10px;
   border-radius: 8px;
   color: #ffffff;
   cursor: pointer;
-`
-export const UnorderedList = styled.ul`
+}
+
+.unorderedList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-`
-export const CourseText = styled.h1`
+}
+
+.courseText {
   margin-left: 50px;
   font-family: Roboto;
-`
+}

@@ -6,21 +6,16 @@ import Header from '../Header'
 
 // import EachCourse from '../EachCourse'
 
-import {
-  LoaderContainer,
-  FailureContainer,
-  FailedHeading,
-  FailedText,
-  FailureImage,
-  RetryBtn,
-} from '../Home/StyledComponents'
+// import {
+//   LoaderContainer,
+//   FailureContainer,
+//   FailedHeading,
+//   FailedText,
+//   FailureImage,
+//   RetryBtn,
+// } from '../Home/StyledComponents'
 
-import {
-  CourseImage,
-  CourseName,
-  CourseDesc,
-  CourseContainer,
-} from './StyledComponents'
+import './index.css'
 
 const apiConstants = {
   initial: 'INITIAL',
@@ -66,20 +61,26 @@ class Courses extends Component {
   }
 
   inProgressView = () => (
-    <LoaderContainer data-testid="loader">
+    <div className="loaderContainer" data-testid="loader">
       <Loader type="ThreeDots" color="#000000" height="50" width="50" />
-    </LoaderContainer>
+    </div>
   )
 
   failureView = () => (
-    <FailureContainer>
-      <FailureImage src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png" />
-      <FailedHeading>Oops! Something Went Wrong</FailedHeading>
-      <FailedText>
+    <div className="failureContainer">
+      <img
+        className="failureImage"
+        alt="failure view"
+        src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
+      />
+      <h1 className="failedHeading">Oops! Something Went Wrong</h1>
+      <p className="failedText">
         We cannot seem to find the page you are looking for
-      </FailedText>
-      <RetryBtn onClick={this.getApiFuntion}>Retry</RetryBtn>
-    </FailureContainer>
+      </p>
+      <button className="retryBtn" onClick={this.getApiFuntion}>
+        Retry
+      </button>
+    </div>
   )
 
   successView = () => {
@@ -87,13 +88,13 @@ class Courses extends Component {
     const {id, name, imageUrl, description} = currentCourse
     console.log(id)
     return (
-      <CourseContainer>
-        <CourseImage src={imageUrl} />
+      <div className="courseContainer">
+        <img alt={name} src={imageUrl} />
         <div>
-          <CourseName>{name}</CourseName>
-          <CourseDesc>{description}</CourseDesc>
+          <h1>{name}</h1>
+          <p>{description}</p>
         </div>
-      </CourseContainer>
+      </div>
     )
   }
 

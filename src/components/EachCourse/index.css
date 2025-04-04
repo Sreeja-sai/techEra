@@ -1,0 +1,11 @@
+/* import styled from 'styled-components' */
+
+.listItem {
+  list-style-type: none;
+  display: flex;
+}
+
+.courseName {
+  color: #000000;
+  text-decoration: none;
+}

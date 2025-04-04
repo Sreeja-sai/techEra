@@ -1,0 +1,40 @@
+/* import styled from 'styled-components' */
+
+.courseContainer {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.failureContainer {
+  height: 80vh;
+  flex-direction: column;
+}
+
+.failureImage {
+  height: 300px;
+}
+
+failedHeading {
+  text-align: center;
+}
+
+failedText {
+  text-align: center;
+}
+
+.retryBtn {
+  background-color: #4656a1;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+}

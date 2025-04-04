@@ -1,0 +1,21 @@
+/* import styled from 'styled-components'  */
+.notFoundImage {
+  height: 500px;
+}
+
+.notFoundContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundHead {
+  text-align: center;
+}
+
+.notFoundDesc {
+  text-align: center;
+}

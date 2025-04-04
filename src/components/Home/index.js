@@ -6,16 +6,18 @@ import Header from '../Header'
 
 import EachCourse from '../EachCourse'
 
-import {
-  LoaderContainer,
-  FailureContainer,
-  FailureImage,
-  FailedHeading,
-  FailedText,
-  RetryBtn,
-  UnorderedList,
-  CourseText,
-} from './StyledComponents'
+// import {
+//   LoaderContainer,
+//   FailureContainer,
+//   FailureImage,
+//   FailedHeading,
+//   FailedText,
+//   RetryBtn,
+//   UnorderedList,
+//   CourseText,
+// } from './StyledComponents'
+
+import './index.css'
 
 const apiConstants = {
   initial: 'INITIAL',
@@ -54,32 +56,38 @@ class Home extends Component {
   }
 
   inProgressView = () => (
-    <LoaderContainer data-testid="loader">
+    <div className="loaderContainer" data-testid="loader">
       <Loader type="ThreeDots" color="#000000" height="50" width="50" />
-    </LoaderContainer>
+    </div>
   )
 
   failureView = () => (
-    <FailureContainer>
-      <FailureImage src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png" />
-      <FailedHeading>Oops! Something Went Wrong</FailedHeading>
-      <FailedText>
+    <div className="failureContainer">
+      <img
+        className="failureImage"
+        alt="failure view"
+        src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
+      />
+      <h1 className="failedHeading">Oops! Something Went Wrong</h1>
+      <p className="failedText">
         We cannot seem to find the page you are looking for
-      </FailedText>
-      <RetryBtn onClick={this.getApiFuntion}>Retry</RetryBtn>
-    </FailureContainer>
+      </p>
+      <button className="retryBtn" onClick={this.getApiFuntion}>
+        Retry
+      </button>
+    </div>
   )
 
   successView = () => {
     const {coursesList} = this.state
     return (
       <div>
-        <CourseText>Courses</CourseText>
-        <UnorderedList>
+        <h1 className="courseText">Courses</h1>
+        <ul className="unorderedList">
           {coursesList.map(eachCourse => (
             <EachCourse key={eachCourse.id} courseItem={eachCourse} />
           ))}
-        </UnorderedList>
+        </ul>
       </div>
     )
   }
